@@ -12,7 +12,12 @@ public class DefaultEnvClassTest {
     private Environment environment;
 
     @Test
-    public void test() {
+    public void testWithSpringCoreEnvironmentClass() {
         Assertions.assertEquals("C:\\Program Files\\Java\\jdk-17.0.5", environment.getProperty("JAVA_HOME"));
+    }
+
+    @Test
+    public void testWithJavaLangMethod() {
+        Assertions.assertEquals("C:\\Program Files\\Java\\jdk-17.0.5", System.getenv("JAVA_HOME"));
     }
 }
